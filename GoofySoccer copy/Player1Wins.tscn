@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://xbs6vogwtncy"]
+
+[ext_resource type="Texture2D" uid="uid://cn6cr28fdspun" path="res://Screenshot 2023-09-07 at 4.01.53 PM.png" id="1_d1l78"]
+[ext_resource type="Script" path="res://Player1Wins.gd" id="1_xe81a"]
+[ext_resource type="Texture2D" uid="uid://bfk6aixwmfwa0" path="res://hhhh.png" id="2_vohyp"]
+[ext_resource type="Texture2D" uid="uid://dq7jh1tgtbp4g" path="res://Screenshot 2023-09-06 at 7.42.59 PM.png" id="3_isomj"]
+
+[sub_resource type="SystemFont" id="SystemFont_fs11q"]
+font_names = PackedStringArray("Gujarati Sangam MN")
+
+[sub_resource type="LabelSettings" id="LabelSettings_jusy4"]
+font = SubResource("SystemFont_fs11q")
+font_size = 40
+
+[sub_resource type="SystemFont" id="SystemFont_uksob"]
+font_names = PackedStringArray("Arial Rounded MT Bold")
+
+[sub_resource type="Theme" id="Theme_asfa6"]
+default_font = SubResource("SystemFont_uksob")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xe81a")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(579.5, 327)
+scale = Vector2(1.02957, 0.770335)
+texture = ExtResource("1_d1l78")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(576, 587)
+scale = Vector2(0.24, 0.232)
+texture = ExtResource("2_vohyp")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 89.0
+offset_right = 1076.0
+offset_bottom = 419.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 12.0
+offset_right = 596.0
+offset_bottom = 71.0
+text = "PLAYER"
+label_settings = SubResource("LabelSettings_jusy4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(501, 142)
+scale = Vector2(0.178621, 0.19195)
+texture = ExtResource("3_isomj")
+
+[node name="Label2" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 239.0
+offset_right = 569.0
+offset_bottom = 298.0
+text = "WINS"
+label_settings = SubResource("LabelSettings_jusy4")
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 470.0
+offset_top = 429.0
+offset_right = 692.0
+offset_bottom = 528.0
+theme = SubResource("Theme_asfa6")
+text = "BACK TO MAIN MENU"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

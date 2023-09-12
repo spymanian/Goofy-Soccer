@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwenml3r8npwq"]
+
+[ext_resource type="Script" path="res://TitleScreen.gd" id="1_ixqkx"]
+[ext_resource type="Texture2D" uid="uid://bi03agbqka22w" path="res://360_F_73025256_mrI2lY6rdCs5DOKHLFeXMKhjIiPXWJ59.jpg" id="2_8xbug"]
+[ext_resource type="Texture2D" uid="uid://bfk6aixwmfwa0" path="res://hhhh.png" id="3_be2q7"]
+[ext_resource type="Texture2D" uid="uid://byxb1l7y7j1vq" path="res://Screenshot 2023-09-11 at 3.19.14 PM copy.png" id="4_rt168"]
+[ext_resource type="Texture2D" uid="uid://dtws3d8b0ad8y" path="res://Screenshot 2023-09-11 at 3.19.25 PM.png" id="5_th62m"]
+
+[sub_resource type="Theme" id="Theme_6dmxx"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ixqkx")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324.5)
+scale = Vector2(1.92, 1.79722)
+texture = ExtResource("2_8xbug")
+
+[node name="Logo" type="Sprite2D" parent="."]
+position = Vector2(566, 208)
+scale = Vector2(0.627, 0.619)
+texture = ExtResource("3_be2q7")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 418.0
+offset_top = 365.0
+offset_right = 723.0
+offset_bottom = 506.0
+theme = SubResource("Theme_6dmxx")
+icon = ExtResource("4_rt168")
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 439.0
+offset_top = 508.0
+offset_right = 701.0
+offset_bottom = 648.0
+theme = SubResource("Theme_6dmxx")
+icon = ExtResource("5_th62m")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

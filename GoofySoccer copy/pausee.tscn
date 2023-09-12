@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwpql6217sby3"]
+
+[ext_resource type="Script" path="res://pausee.gd" id="1_sj2fj"]
+
+[sub_resource type="SystemFont" id="SystemFont_uojct"]
+font_names = PackedStringArray("Arial Rounded MT Bold")
+
+[sub_resource type="Theme" id="Theme_ito7g"]
+default_font = SubResource("SystemFont_uojct")
+
+[sub_resource type="SystemFont" id="SystemFont_gngay"]
+font_names = PackedStringArray("Arial Rounded MT Bold")
+
+[sub_resource type="LabelSettings" id="LabelSettings_36egt"]
+font = SubResource("SystemFont_gngay")
+font_size = 50
+font_color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_sj2fj")
+
+[node name="BG1" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.286275)
+
+[node name="BG2" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 90.0
+offset_top = 56.0
+offset_right = -92.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="BG2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.0
+offset_right = 86.0
+offset_bottom = 79.0
+grow_horizontal = 2
+theme = SubResource("Theme_ito7g")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pause
+"
+label_settings = SubResource("LabelSettings_36egt")
+
+[node name="Button" type="Button" parent="BG2"]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 120.0
+offset_right = 768.0
+offset_bottom = 264.0
+text = "Exit"
+
+[connection signal="pressed" from="BG2/Button" to="." method="_on_button_pressed"]
