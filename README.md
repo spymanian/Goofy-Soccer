@@ -5,7 +5,7 @@ A Funky Game of Soccer with Goofy Mechanics!
 My First Game was Created in the Godot Engine using GDScript.
 
 <div align="center">
-<img src="https://github.com/Spymanian/Goofy-Soccer/blob/main/gameplay.jpg" align="center">
-  </div>
+<img max-width="800" src="https://github.com/spymanian/Goofy-Soccer/blob/main/gameplay.png"/>
+</div>
 
 
