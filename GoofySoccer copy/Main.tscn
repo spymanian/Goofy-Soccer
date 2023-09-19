@@ -1,7 +1,8 @@
-[gd_scene load_steps=24 format=3 uid="uid://d0b5p3i1w3h3q"]
+[gd_scene load_steps=25 format=3 uid="uid://d0b5p3i1w3h3q"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_0fi6s"]
 [ext_resource type="Texture2D" uid="uid://cn6cr28fdspun" path="res://Screenshot 2023-09-07 at 4.01.53 PM.png" id="1_t6qar"]
+[ext_resource type="Script" path="res://MiniGameManager.gd" id="2_ixd5j"]
 [ext_resource type="Texture2D" uid="uid://dq7jh1tgtbp4g" path="res://Screenshot 2023-09-06 at 7.42.59 PM.png" id="2_lfyl8"]
 [ext_resource type="Texture2D" uid="uid://dxons2rho4opt" path="res://Screenshot 2023-09-06 at 7.43.19 PM.png" id="3_fi8ek"]
 [ext_resource type="Script" path="res://Player1.gd" id="3_x7510"]
@@ -64,6 +65,9 @@ size = Vector2(129.759, 49.75)
 script = ExtResource("1_0fi6s")
 metadata/_edit_vertical_guides_ = [384.0, 760.0, 760.0, 576.0, 761.0, 387.0, 576.0]
 metadata/_edit_horizontal_guides_ = [320.0, 320.0, -384.0, 328.0, 317.0]
+
+[node name="MiniGameManager" type="Node2D" parent="."]
+script = ExtResource("2_ixd5j")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -2
@@ -309,5 +313,8 @@ offset_bottom = 73.0
 text = "The Slower You Get"
 horizontal_alignment = 1
 
+[connection signal="show_winner" from="MiniGameManager" to="." method="_on_show_winner"]
+[connection signal="update_score" from="MiniGameManager" to="." method="_on_mini_game_manager_update_score"]
+[connection signal="winner_declared" from="MiniGameManager" to="." method="_on_mini_game_manager_winner_declared"]
 [connection signal="body_entered" from="Goal1" to="." method="_on_Goal1_body_entered"]
 [connection signal="body_entered" from="Goal2" to="." method="_on_Goal2_body_entered"]
